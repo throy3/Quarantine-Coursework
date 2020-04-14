@@ -1,0 +1,52 @@
+# Question 1
+class Person:
+  """
+  Attrs:
+      name (str): First and Last
+      height (int): in cm
+      strength (int)": How strong the person is
+      health_points (int): Out of 100 (everyone starts at 100)
+  """
+  def __init__(self, name: str, height: int, strength: int):
+    self.name = name
+    self.height = height
+    self.strength = strength
+    self.health_points = 100
+
+# Question 2
+  def __str__(self):
+    return f"name: {self.name}, HP: {self.health_points}"
+
+# Question 3
+  def introduce(self):
+    return f"Hello, my name is {self.name}"
+
+# Question 4
+  def punch(self, victim):
+    victim.health_points -= 10
+
+# Question 5
+  def eat(self):
+    self.health_points = 100
+
+# Question 2
+person_1 = Person("Marc", 200, 100)
+print(person_1)
+person_2 = Person("Mark", 200, 100)
+print(person_2)
+
+# Question 3
+print(person_1.introduce())
+print(person_2.introduce())
+
+# Question 4
+person_1.punch(person_2)
+print(person_2.health_points)
+person_1.punch(person_1)
+print(person_1.health_points)
+
+# Question 5
+person_1.eat()
+print(person_1.health_points)
+person_2.eat()
+print(person_2.health_points)
